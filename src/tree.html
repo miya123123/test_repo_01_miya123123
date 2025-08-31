@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+</head>
+<body>
+<script>
+function setup(){createCanvas(windowWidth,windowHeight);stroke(255);} 
+function draw(){background(0);translate(width/2,height);branch(150);}
+function branch(len){
+  line(0,0,0,-len);
+  translate(0,-len);
+  if(len>10){
+    push();rotate(PI/6);branch(len*0.67);pop();
+    push();rotate(-PI/4);branch(len*0.67);pop();
+  }
+}
+</script>
+</body>
+</html>

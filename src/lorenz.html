@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+</head>
+<body>
+<script>
+let x=0.01,y=0,z=0;
+function setup(){createCanvas(windowWidth,windowHeight,WEBGL);background(0);stroke(255);noFill();}
+function draw(){
+  rotateY(frameCount*0.01);
+  scale(5);
+  beginShape();
+  for(let i=0;i<10;i++){
+    let dt=0.01;
+    let dx=10*(y-x)*dt;
+    let dy=(28*x-y-x*z)*dt;
+    let dz=(x*y-8/3*z)*dt;
+    x+=dx;y+=dy;z+=dz;
+    vertex(x,y,z);
+  }
+  endShape();
+}
+</script>
+</body>
+</html>
