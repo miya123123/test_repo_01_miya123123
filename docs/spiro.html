@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+</head>
+<body>
+<script>
+let R=100,r=40,d=60,t=0;
+function setup(){createCanvas(windowWidth,windowHeight);background(0);stroke(255);noFill();}
+function draw(){
+  translate(width/2,height/2);
+  let x=(R-r)*cos(t)+d*cos(((R-r)/r)*t);
+  let y=(R-r)*sin(t)-d*sin(((R-r)/r)*t);
+  point(x,y);
+  t+=0.02;
+  if(frameCount%500==0){background(0);t=0;}
+}
+</script>
+</body>
+</html>

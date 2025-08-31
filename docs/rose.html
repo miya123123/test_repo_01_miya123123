@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+</head>
+<body>
+<script>
+let k=5;
+function setup(){createCanvas(windowWidth,windowHeight);}
+function draw(){
+  background(0);
+  translate(width/2,height/2);
+  stroke(255,100,200);
+  noFill();
+  beginShape();
+  for(let th=0;th<TWO_PI;th+=0.01){
+    let r=200*sin(k*th);
+    vertex(r*cos(th),r*sin(th));
+  }
+  endShape();
+  k=2+sin(frameCount*0.01)*4;
+}
+</script>
+</body>
+</html>
